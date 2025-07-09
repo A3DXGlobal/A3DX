@@ -1,51 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>A3DX - Modelos 3D</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A3DX - Modelado 3D Profesional</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
       margin: 0;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
     }
     header {
+      background: #1a1a1a;
+      padding: 40px 20px;
       text-align: center;
-      margin-bottom: 40px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+    .contenedor {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
     .proyecto {
-      background: #222;
+      background: #1c1c1c;
       padding: 20px;
-      border-radius: 10px;
       margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-    a {
+    .proyecto h2 {
+      margin-top: 0;
+    }
+    .proyecto a {
       color: #00d8ff;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>A3DX</h1>
-    <p>Modelado 3D para tiendas, negocios y arquitectura</p>
+    <p>Modelado 3D para negocios, tiendas y espacios arquitectónicos</p>
   </header>
 
-  <section class="proyecto">
-    <h2>Proyecto 1</h2>
-    <p>Render de tienda con diseño moderno.</p>
-    <a href="https://sketchfab.com/" target="_blank">Ver modelo</a>
-  </section>
+  <div class="contenedor">
+    <div class="proyecto">
+      <h2>Proyecto: Tienda Moderna</h2>
+      <p>Modelo 3D realista para presentación de interiores de tiendas.</p>
+      <a href="https://sketchfab.com/" target="_blank">Ver modelo en Sketchfab</a>
+    </div>
 
-  <section class="proyecto">
-    <h2>Proyecto 2</h2>
-    <p>Negocio 3D exterior para presentación de clientes.</p>
-    <a href="#">Ver modelo</a>
-  </section>
+    <div class="proyecto">
+      <h2>Proyecto: Fachada Comercial</h2>
+      <p>Diseño 3D de fachada para negocio local con iluminación LED.</p>
+      <a href="#">Ver más</a>
+    </div>
+  </div>
 
   <footer>
-    <p>Contacto: contacto@a3dx.com</p>
+    <p>© 2025 A3DX Global | contacto@a3dx.com</p>
   </footer>
+
 </body>
 </html>
