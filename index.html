@@ -1,15 +1,137 @@
-<div class="proyecto" data-nombre="Diseño Canva" data-desc="Diseño insertado desde Canva">
-  <h2>Diseño interactivo desde Canva</h2>
-  <div style="position: relative; width: 100%; height: 0; padding-top: 168.67%;
-    box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin: 1.6em 0 0.9em 0; overflow: hidden;
-    border-radius: 8px;">
-    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
-      src="https://www.canva.com/design/DAGsqT5R1VQ/-g4m6QpzliDQeq9nakhU_Q/view?embed"
-      allowfullscreen allow="fullscreen">
-    </iframe>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A3DX - Modelado 3D Profesional</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+    .contenedor {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    #buscador {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 1em;
+    }
+    .proyecto {
+      background: #1c1c1c;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .proyecto h2 {
+      margin-top: 0;
+    }
+    .proyecto iframe {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .proyecto a {
+      display: block;
+      margin-top: 10px;
+      color: #00d8ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .proyecto a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="A3DX Logo">
+    <h1>A3DX</h1>
+    <p>Modelado 3D para negocios, tiendas y espacios arquitectónicos</p>
+  </header>
+
+  <div class="contenedor">
+    <input type="text" id="buscador" placeholder="Buscar proyecto por nombre o descripción...">
+
+    <!-- Proyecto con visor 3D -->
+    <div class="proyecto" data-nombre="Tienda Moderna" data-desc="Render de tienda con diseño moderno">
+      <h2>Tienda Moderna</h2>
+      <iframe title="Tienda Moderna" frameborder="0" allowfullscreen
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        src="https://sketchfab.com/models/abc123456789/embed">
+      </iframe>
+      <p>Render de tienda con diseño moderno e iluminación ambiental.</p>
+      <a href="https://sketchfab.com/models/abc123456789">Ver en Sketchfab</a>
+    </div>
+
+    <!-- Proyecto de Canva incrustado -->
+    <div class="proyecto" data-nombre="Diseño Canva" data-desc="Diseño insertado desde Canva">
+      <h2>Diseño interactivo desde Canva</h2>
+      <div style="position: relative; width: 100%; height: 0; padding-top: 168.67%;
+        box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin: 1.6em 0 0.9em 0; overflow: hidden;
+        border-radius: 8px;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+          src="https://www.canva.com/design/DAGsqT5R1VQ/-g4m6QpzliDQeq9nakhU_Q/view?embed"
+          allowfullscreen allow="fullscreen">
+        </iframe>
+      </div>
+      <a href="https://www.canva.com/design/DAGsqT5R1VQ/-g4m6QpzliDQeq9nakhU_Q/view"
+         target="_blank" rel="noopener">Ver diseño completo en Canva</a>
+    </div>
+
   </div>
-  <a href="https://www.canva.com/design/DAGsqT5R1VQ/-g4m6QpzliDQeq9nakhU_Q/view?utm_content=DAGsqT5R1VQ&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-     target="_blank" rel="noopener">
-    Ver diseño completo en Canva
-  </a>
-</div>
+
+  <footer>
+    <p>© 2025 A3DX Global | contacto@a3dx.com</p>
+  </footer>
+
+  <script>
+    const buscador = document.getElementById('buscador');
+    const proyectos = document.querySelectorAll('.proyecto');
+
+    buscador.addEventListener('input', function () {
+      const texto = buscador.value.toLowerCase();
+      proyectos.forEach(proyecto => {
+        const nombre = proyecto.getAttribute('data-nombre').toLowerCase();
+        const desc = proyecto.getAttribute('data-desc').toLowerCase();
+        const coincide = nombre.includes(texto) || desc.includes(texto);
+        proyecto.style.display = coincide ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
