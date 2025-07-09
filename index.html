@@ -29,6 +29,14 @@
       max-width: 1000px;
       margin: auto;
     }
+    #buscador {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 1em;
+    }
     .proyecto {
       background: #1c1c1c;
       padding: 20px;
@@ -38,6 +46,13 @@
     }
     .proyecto h2 {
       margin-top: 0;
+    }
+    .proyecto img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
     .proyecto a {
       color: #00d8ff;
@@ -59,22 +74,47 @@
   </header>
 
   <div class="contenedor">
-    <div class="proyecto">
-      <h2>Proyecto: Tienda Moderna</h2>
-      <p>Modelo 3D realista para presentación de interiores de tiendas.</p>
+    <input type="text" id="buscador" placeholder="Buscar proyecto por nombre...">
+
+    <div class="proyecto" data-nombre="Tienda Moderna">
+      <img src="https://via.placeholder.com/800x300?text=Tienda+Moderna" alt="Tienda Moderna">
+      <h2>Tienda Moderna</h2>
+      <p>Render de una tienda con diseño moderno e iluminación ambiental.</p>
       <a href="https://sketchfab.com/" target="_blank">Ver modelo en Sketchfab</a>
     </div>
 
-    <div class="proyecto">
-      <h2>Proyecto: Fachada Comercial</h2>
-      <p>Diseño 3D de fachada para negocio local con iluminación LED.</p>
-      <a href="#">Ver más</a>
+    <div class="proyecto" data-nombre="Fachada Comercial">
+      <img src="https://via.placeholder.com/800x300?text=Fachada+Comercial" alt="Fachada Comercial">
+      <h2>Fachada Comercial</h2>
+      <p>Diseño de fachada para negocio con letreros y vitrinas.</p>
+      <a href="#">Ver presentación 3D</a>
+    </div>
+
+    <div class="proyecto" data-nombre="Interior Minimalista">
+      <img src="https://via.placeholder.com/800x300?text=Interior+Minimalista" alt="Interior Minimalista">
+      <h2>Interior Minimalista</h2>
+      <p>Diseño interior limpio y moderno para oficina o consultorio.</p>
+      <a href="#">Ver detalles</a>
     </div>
   </div>
 
   <footer>
     <p>© 2025 A3DX Global | contacto@a3dx.com</p>
   </footer>
+
+  <script>
+    // Filtrado en tiempo real
+    const buscador = document.getElementById('buscador');
+    const proyectos = document.querySelectorAll('.proyecto');
+
+    buscador.addEventListener('input', function () {
+      const texto = buscador.value.toLowerCase();
+      proyectos.forEach(proyecto => {
+        const nombre = proyecto.getAttribute('data-nombre').toLowerCase();
+        proyecto.style.display = nombre.includes(texto) ? 'block' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
